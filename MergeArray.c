@@ -12,6 +12,19 @@ void merge(int arr1[], int arr2[], int size1, int size2, int arr[])
     }
 }
 
+/*void merge(int arr1[], int arr2[], int size1, int size2, int arr[])
+{
+
+    for (int i = 0; i < size1; i++)
+    {
+        arr[i] = arr1[i];
+    }
+    for (int j = size1; j < (size1+size2); j++)
+    {
+        arr[j] = arr2[j];
+    }
+}*/
+
 void print(int arr1[], int arr2[], int size1, int size2, int arr[])
 {
     for (int m = 0; m < (size1 + size2); m++)
