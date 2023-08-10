@@ -23,6 +23,7 @@ treenode *createnode(int value)
     return result;
 }
 
+
 void printtreee(treenode *root)
 {
     if (root == NULL)
@@ -38,6 +39,21 @@ void printtreee(treenode *root)
 
 int main()
 {
+    printf("Enter the number of nodes: ");
+    int numNodes,val;
+    scanf("%d", numNodes);
+    for (int i = 0; i < numNodes; i++)
+    {
+        printf("Enter the value: ");
+        scanf("%d",val);
+        treenode *n{i} = createnode(10);
+        }
+    
+
+
+
+
+
     treenode *n1 = createnode(10);
     treenode *n2 = createnode(11);
     treenode *n3 = createnode(12);
