@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 // creating the tree
 typedef struct treenode
@@ -42,11 +43,17 @@ int main()
     printf("Enter the number of nodes: ");
     int numNodes,val;
     scanf("%d", numNodes);
+    int n[numNodes];
+    for (int i = 0; i < numNodes; i++)
+    {
+        n[i] = i+1;
+    }
+    
     for (int i = 0; i < numNodes; i++)
     {
         printf("Enter the value: ");
         scanf("%d",val);
-        treenode *n{i} = createnode(10);
+        treenode *n[i] = createnode(10);
         }
     
 
