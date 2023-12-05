@@ -7,7 +7,8 @@ struct Node
     struct Node *next;
 };
 
-struct Node *insertAtBeginning(struct Node *head, int data)
+//write a function to create a node at the begining of the link list
+struct Node *createNodeAtBegining(struct Node *head, int data)
 {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
@@ -15,6 +16,8 @@ struct Node *insertAtBeginning(struct Node *head, int data)
     head = newNode;
     return head;
 }
+
+
 
 struct Node *createNode(int data)
 {
@@ -61,9 +64,17 @@ int main()
 
     displayList(head);
 
-    head = insertAtBeginning(head, 3);
-    printf("After inserting 3 at the beginning:\n");
+
+    int j;
+    printf("Input data for new node : ");
+    scanf("%d", &j);
+    head = createNodeAtBegining(head, j);
+    
+    printf("After inserted in the list : \n");
     displayList(head);
+
+
+
 
     return 0;
 }
