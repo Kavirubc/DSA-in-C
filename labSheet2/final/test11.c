@@ -33,6 +33,19 @@ struct Node *createNodeAtEnd(struct Node *head, int data)
 
     return head;
 }
+//count the number oof nodes in the list
+int countNodes(struct Node *head)
+{
+    int count = 0;
+    struct Node *temp = head;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+
+    return count;
+}
 
 struct Node *createNode(int data)
 {
@@ -95,6 +108,11 @@ int main()
 
     printf("After inserted in the list : \n");
     displayList(head);
+
+    int y = countNodes(head);
+
+    printf("Number of nodes in the list : %d\n", y);
+
 
 
 
