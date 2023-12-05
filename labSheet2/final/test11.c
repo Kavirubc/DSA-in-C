@@ -7,6 +7,15 @@ struct Node
     struct Node *next;
 };
 
+struct Node *insertAtBeginning(struct Node *head, int data)
+{
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = head;
+    head = newNode;
+    return head;
+}
+
 struct Node *createNode(int data)
 {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
@@ -19,7 +28,7 @@ void displayList(struct Node *node)
 {
     while (node != NULL)
     {
-        printf("Data = %d ", node->data);
+        printf("Data = %d\n", node->data);
         node = node->next;
     }
     printf("\n");
@@ -50,6 +59,10 @@ int main()
         }
     }
 
+    displayList(head);
+
+    head = insertAtBeginning(head, 3);
+    printf("After inserting 3 at the beginning:\n");
     displayList(head);
 
     return 0;
