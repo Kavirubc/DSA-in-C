@@ -8,7 +8,7 @@ struct Node
 };
 
 // newNode at the begining
-struct Node *createNodeAtBegining(struct Node *head, int data)
+struct Node *nodeFront(struct Node *head, int data)
 {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
@@ -18,22 +18,34 @@ struct Node *createNodeAtBegining(struct Node *head, int data)
 }
 
 // newNode at the end
-struct Node *createNodeAtEnd(struct Node *head, int data)
+struct Node *nodeEnd(struct Node *head, int data)
 {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = NULL;
 
-    struct Node *temp = head;
-    while (temp->next != NULL)
+    struct Node *tem = head;
+    while (tem->next != NULL)
     {
-        temp = temp->next;
+        tem = tem->next;
     }
-    temp->next = newNode;
+    tem->next = newNode;
 
     return head;
 }
-//
+// count the number oof nodes in the list
+int countNodes(struct Node *head)
+{
+    int count = 0;
+    struct Node *tem = head;
+    while (tem != NULL)
+    {
+        count++;
+        tem = tem->next;
+    }
+
+    return count;
+}
 
 struct Node *createNode(int data)
 {
@@ -56,7 +68,7 @@ void displayList(struct Node *node)
 int main()
 {
     int n, i, data;
-    struct Node *head = NULL, *temp = NULL;
+    struct Node *head = NULL, *tem = NULL;
 
     printf("Input the number of nodes : ");
     scanf("%d", &n);
@@ -69,32 +81,36 @@ int main()
         if (i == 0)
         {
             head = createNode(data);
-            temp = head;
+            tem = head;
         }
         else
         {
-            temp->next = createNode(data);
-            temp = temp->next;
+            tem->next = createNode(data);
+            tem = tem->next;
         }
     }
 
     displayList(head);
 
     int j;
-    printf("Input data for new node : ");
+    printf("Input data for new node at the front : ");
     scanf("%d", &j);
-    head = createNodeAtBegining(head, j);
+    head = nodeFront(head, j);
 
     printf("After inserted in the list : \n");
     displayList(head);
 
     int k;
-    printf("Input data for new node : ");
+    printf("Input data for new node at the end : ");
     scanf("%d", &k);
-    head = createNodeAtEnd(head, k);
+    head = nodeEnd(head, k);
 
-    printf("After inserted in the list : \n");
+    printf("After inserted in the list: \n");
     displayList(head);
+
+    int y = countNodes(head);
+
+    printf("Number of nodes in the list : %d\n", y);
 
     return 0;
 }
