@@ -1,0 +1,3 @@
+Create a program that demonstrates random access to a file named "data.bin". Allow the user
+to modify a specific block (say 512 bytes) of data at a given offset in the file. Display the content
+of the file before and after the modification.
