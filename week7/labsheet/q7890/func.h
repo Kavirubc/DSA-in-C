@@ -1,18 +1,13 @@
-// func.h
 #ifndef FUNC_H
 #define FUNC_H
 
 #include "types.h"
-#include <stdbool.h> // Add this line for bool
 
-void initialize_int_queue(Queue *queue, int size);
-void enqueue_int(Queue *queue, int data);
-int dequeue_int(Queue *queue);
-void display_int(Queue *queue);
+enqueue(CircularQueue *queue, int value);
+dequeue(CircularQueue *queue);
+displayQueue(CircularQueue *queue);
+readFromFileAndEnqueue(CircularQueue *queue, const char *filename);
+dequeueAndUpdateFile(CircularQueue *queue, const char *filename);
+checkFileIntegrity(CircularQueue *queue, const char *filename);
 
-void initialize_char_queue(Queue *queue, int size);
-void enqueue_char(Queue *queue, char data);
-char dequeue_char(Queue *queue);
-void display_char(Queue *queue);
-
-#endif // FUNC_H
+#endif
